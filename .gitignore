@@ -51,6 +51,8 @@ Temporary Items
 node_modules/
 server/node_modules/
 
+dist/
+
 # App archives
 *.map
 *.log

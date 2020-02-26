@@ -1,9 +1,10 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const concat = require('gulp-concat');
-const broswerSync = require('browser-sync').create();
-const babel = require('gulp-babel');
+const gulp = require('gulp'),
+  sass = require('gulp-sass'),
+  autoprefixer = require('gulp-autoprefixer'),
+  concat = require('gulp-concat'),
+  broswerSync = require('browser-sync').create(),
+  babel = require('gulp-babel'),
+  uglify = require('gulp-uglify');
 
 function sassCompiler() {
   return gulp.src('./src/**/*.scss')
@@ -23,7 +24,9 @@ function jsCompiler() {
     .pipe(babel({
       "presets": ["@babel/preset-env"]
     }))
-    .pipe(gulp.dest('./dist/js/'));
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/js/'))
+    .pipe(broswerSync.stream());
 }
 
 gulp.task('js-compiler', jsCompiler);

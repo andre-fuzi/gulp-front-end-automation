@@ -35,7 +35,9 @@ function broswerSyncInit () {
   broswerSync.init({
     server: {
       baseDir: "./"
-    }
+    },
+    open: false,
+    port: 3000
   });
 }
 

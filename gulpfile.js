@@ -4,7 +4,8 @@ const gulp = require('gulp'),
   concat = require('gulp-concat'),
   broswerSync = require('browser-sync').create(),
   babel = require('gulp-babel'),
-  uglify = require('gulp-uglify');
+  uglify = require('gulp-uglify'),
+  svgmin = require('gulp-svgmin');
 
 function sassCompiler() {
   return gulp.src('./src/**/*.scss')
@@ -31,6 +32,14 @@ function jsCompiler() {
 
 gulp.task('js-compiler', jsCompiler);
 
+function svgMinifier() {
+  return gulp.src('./src/**/*.svg')
+    .pipe(svgmin())
+    .pipe(gulp.dest('./dist'));
+}
+
+gulp.task('svg-min', svgMinifier);
+
 function broswerSyncInit () {
   broswerSync.init({
     server: {
@@ -51,4 +60,4 @@ function watch() {
 
 gulp.task('watch', watch);
 
-gulp.task('default', gulp.parallel('sass-compiler', 'js-compiler', 'watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('sass-compiler', 'svg-min', 'js-compiler', 'watch', 'browser-sync'));

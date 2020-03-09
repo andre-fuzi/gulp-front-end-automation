@@ -2,6 +2,7 @@ const gulp = require('gulp'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   concat = require('gulp-concat'),
+  rename = require('gulp-rename'),
   broswerSync = require('browser-sync').create(),
   babel = require('gulp-babel'),
   uglify = require('gulp-uglify'),
@@ -12,6 +13,9 @@ function sassCompiler() {
     .pipe(sass({outputStyle: "compressed"}))
     .pipe(autoprefixer({
       cascade: false
+    }))
+    .pipe(rename({
+      suffix: '.min'
     }))
     .pipe(gulp.dest('./dist/css/'))
     .pipe(broswerSync.stream());
@@ -26,6 +30,9 @@ function jsCompiler() {
       "presets": ["@babel/preset-env"]
     }))
     .pipe(uglify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
     .pipe(gulp.dest('./dist/js/'))
     .pipe(broswerSync.stream());
 }

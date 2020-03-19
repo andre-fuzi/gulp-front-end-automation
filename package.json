@@ -6,13 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "André Kaoru Fuziyama",
+  "homepage": "https://github.com/andre-fuzi/gulp-front-end-automation",
   "license": "ISC",
-  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andre-fuzi/gulp-front-end-automation"
+  },
+  "engines" : {
+    "node": "12.16.0",
+    "npm": "6.13.4",
+    "gulp-cli": "6.13.4",
+    "gulp": "4.0.2"
+  },
   "browserslist": [
     "defaults",
     "IE 10"
   ],
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",

@@ -13,10 +13,9 @@
     "type": "git",
     "url": "https://github.com/andre-fuzi/gulp-front-end-automation"
   },
-  "engines" : {
-    "node": "12.16.0",
-    "npm": "6.13.4",
-    "gulp-cli": "6.13.4",
+  "engines": {
+    "node": "12.16.2",
+    "npm": "6.14.4",
     "gulp": "4.0.2"
   },
   "browserslist": [
@@ -28,12 +27,20 @@
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "browser-sync": "^2.26.7",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-debug": "^4.0.0",
+    "gulp-eslint": "^6.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-svgmin": "^2.2.0",
     "gulp-uglify": "^3.0.2",
     "gulp-watch": "^5.0.1"
